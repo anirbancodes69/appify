@@ -6,11 +6,13 @@ mongoose
     useCreateIndex: true,
     useNewUrlParser: true,
     useFindAndModify: false,
+    useUnifiedTopology: true,
   })
-  .then(() => console.log("DB Connected Successfully!"));
+  .then(() => {
+    console.log("DB Connected Successfully!");
+    app.listen(port, () => {
+      console.log(`Listing on Port: ${port}`);
+    });
+  });
 
 const port = process.env.PORT || 3000;
-
-app.listen(port, () => {
-  console.log(`Listing on Port: ${port}`);
-});

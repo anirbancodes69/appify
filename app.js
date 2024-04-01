@@ -9,7 +9,10 @@ const express = require("express");
 const app = express();
 
 if (process.env.NODE_ENV === "dev") {
+  console.log("Welcome to Development!");
   app.use(morgan("dev"));
+} else if (process.env.NODE_ENV === "prod") {
+  console.log("Welcome to Production!");
 }
 
 app.use(express.json());
