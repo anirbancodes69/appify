@@ -8,9 +8,9 @@ const userRouter = require("./routes/userRoutes");
 const express = require("express");
 const app = express();
 
-if (process.env.NODE_ENV === "dev") {
-  app.use(morgan("dev"));
-}
+// if (process.env.NODE_ENV === "dev") {
+//   app.use(morgan("dev"));
+// }
 
 app.use(express.json());
 
