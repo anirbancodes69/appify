@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 const app = require("./app");
-const db = "mongodb://localhost:27017/appify";
+const db = process.env.DATABASE_UBUNTU1;
 mongoose
   .connect(db, {
     useCreateIndex: true,
