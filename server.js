@@ -1,6 +1,9 @@
+require("dotenv").config({ path: "./config.env" });
 const mongoose = require("mongoose");
 const app = require("./app");
 const db = process.env.DATABASE_UBUNTU1;
+const port = process.env.PORT || 3000;
+
 mongoose
   .connect(db, {
     useCreateIndex: true,
@@ -14,5 +17,3 @@ mongoose
       console.log(`Listing on Port: ${port}`);
     });
   });
-
-const port = process.env.PORT || 3000;
